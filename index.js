@@ -4,7 +4,7 @@ let currentIndex = 0;
 let ContentElement = [];
 let key = "";
 
-const IS_REMOTE_SERVER = false
+const IS_REMOTE_SERVER = true
 
 let SERVER_URL;
 let SERVER_WEBSOCKET_URL;
