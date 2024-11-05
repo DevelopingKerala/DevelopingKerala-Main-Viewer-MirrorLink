@@ -321,25 +321,12 @@ async function showCurrentFile() {
 
 }
 
-
-
-// app.js
-
-// Check if the browser supports service workers
+// index.js
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('service-worker.js')
+      navigator.serviceWorker.register('service-worker.js') // Path to your service worker file
         .then(registration => {
           console.log('Service Worker registered with scope:', registration.scope);
-  
-          // Start the periodic sync when the service worker is ready
-          if ('PeriodicSyncManager' in window) {
-            navigator.serviceWorker.ready.then((registration) => {
-              registration.active.postMessage({
-                type: 'START_SYNC'
-              });
-            });
-          }
         })
         .catch(error => {
           console.error('Service Worker registration failed:', error);
